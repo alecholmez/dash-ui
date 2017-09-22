@@ -4,7 +4,7 @@
  }
 
 .uk-tile-success {
-    background-color: #01B48F;
+    background-color: #09AA29;
 }
 
 .uk-tile-running {
@@ -12,7 +12,7 @@
 }
 
 .uk-tile-failed {
-    background-color: red;
+    background-color: #CF011A;
 }
 
 .uk-tile-no_tests {
@@ -43,4 +43,18 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Lato' !important;
     font-weight: 900 !important;
+}
+
+.uk-light {
+    color: rgba(255,255,255,1) !important;
+}
+
+.uk-text-meta {
+    color: rgba(255,255,255,0.8) !important;
+}
+
+.subject-wrap {
+    max-width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis
 }

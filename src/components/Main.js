@@ -2,7 +2,7 @@ require('normalize.css/normalize.css');
 require('styles/App.css');
 
 import React from 'react';
-import Error from './Error';
+import Loading from './Loading';
 import Cards from './Cards';
 
 class AppComponent extends React.Component {
@@ -57,7 +57,7 @@ class AppComponent extends React.Component {
     } else {
       return (
         <div data-uk-height-viewport>
-          <Error message={'Could not fetch builds!'}/>
+          <Loading />
         </div>
       );
     }

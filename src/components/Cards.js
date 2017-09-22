@@ -21,23 +21,8 @@ class Cards extends React.Component {
                               <div className="uk-width-3-4">
                                   <h3 className="uk-text-uppercase uk-display-inline-block uk-margin-remove-bottom">{build.reponame}</h3>
                               </div>
-                              <div className="uk-width-1-4">
-                                  <img className="uk-border-circle uk-float-right" src={build.build_info.user.avatar_url} width="100" height="100" alt="Missing Profile"/>
-                              </div>
                           </div>
                           <hr />
-                          <div className="uk-margin-remove-bottom">
-                              <p className="uk-text-meta uk-display-inline-block">Language: </p>
-                              <p className="uk-display-inline-block uk-margin-left uk-margin-remove-top uk-margin-remove-bottom uk-float-right">{build.language}</p>
-                          </div>
-                          <div className="uk-margin-remove-top">
-                              <p className="uk-text-meta uk-display-inline-block">Branch: </p>
-                              <p className="uk-display-inline-block uk-margin-left uk-margin-remove-top uk-margin-remove-bottom uk-float-right uk-text-capitalize uk-margin-remove-left">{build.build_info.branch}</p>
-                          </div>
-                          <div className="uk-margin-remove-top">
-                              <p className="uk-text-meta uk-display-inline-block">Build Number: </p>
-                              <p className="uk-display-inline-block uk-margin-left uk-margin-remove-top uk-margin-remove-bottom uk-float-right">{build.build_info.build_num}</p>
-                          </div>
                           <div className="uk-margin-remove-top">
                               <p className="uk-text-meta uk-display-inline-block">Lifecycle: </p>
                               <p className="uk-display-inline-block uk-margin-left uk-margin-remove-top uk-margin-remove-bottom uk-float-right uk-text-capitalize">{build.build_info.lifecycle}</p>
@@ -47,8 +32,28 @@ class Cards extends React.Component {
                               <p className="uk-display-inline-block uk-margin-left uk-margin-remove-top uk-margin-remove-bottom uk-float-right uk-text-capitalize">{build.build_info.status}</p>
                           </div>
                           <div className="uk-margin-remove-top">
+                              <p className="uk-text-meta uk-display-inline-block">Build Number: </p>
+                              <p className="uk-display-inline-block uk-margin-left uk-margin-remove-top uk-margin-remove-bottom uk-float-right">{build.build_info.build_num}</p>
+                          </div>
+                          <div className="uk-margin-remove-top">
+                              <p className="uk-text-meta uk-display-inline-block">Branch: </p>
+                              <p className="uk-display-inline-block uk-margin-left uk-margin-remove-top uk-margin-remove-bottom uk-float-right uk-text-capitalize uk-margin-remove-left">{build.build_info.branch}</p>
+                          </div>
+                          <div className="uk-margin-remove-top">
                               <p className="uk-text-meta uk-display-inline-block">Triggered By: </p>
+                              <img className="uk-border-circle uk-float-right uk-display-inline-block" src={build.build_info.user.avatar_url} width="40" height="40" alt="Missing Profile"/>
                               <p className="uk-display-inline-block uk-margin-remove-top uk-margin-remove-bottom uk-float-right uk-margin-remove-left">{build.build_info.user.name}</p>
+                          </div>
+                          <hr />
+                          <div className="uk-margin-remove-bottom">
+                              <p className="uk-text-meta uk-display-inline-block uk-margin-remove-bottom">Subject: </p>
+                              <div className="uk-display-inline-block uk-margin-left uk-margin-remove-top uk-margin-remove-bottom uk-float-right subject-wrap">
+                                  <p className=" uk-margin-remove-bottom uk-margin-remove-top">{build.build_info.subject}</p>
+                              </div>
+                          </div>
+                          <div className="uk-margin-remove-bottom">
+                              <p className="uk-text-meta uk-display-inline-block uk-margin-remove-bottom">Language: </p>
+                              <p className="uk-display-inline-block uk-margin-left uk-margin-remove-top uk-margin-remove-bottom uk-float-right">{build.language}</p>
                           </div>
                       </div>
                   </div>
