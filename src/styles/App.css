@@ -1,21 +1,46 @@
 /* Base Application Styles */
+ .uk-tile {
+     border-radius: 10px;
+ }
+
+.uk-tile-success {
+    background-color: #01B48F;
+}
+
+.uk-tile-running {
+    background-color: #44C7F4;
+}
+
+.uk-tile-failed {
+    background-color: red;
+}
+
+.uk-tile-no_tests {
+    background-color: #EACA2C;
+}
+
+.uk-tile-timedout {
+    background-color: #FF9A57;
+}
+
 body {
-  color: #fff;
-  background: #222;
+    font-family: 'Lato';
 }
 
-.index img {
-  margin: 40px auto;
-  border-radius: 4px;
-  background: #fff;
-  display: block;
+.uk-heading-hero {
+    font-family: 'Lato';
+    font-weight: 400 !important;
 }
 
-.index .notice {
-  margin: 20px auto;
-  padding: 15px 0;
-  text-align: center;
-  border: 1px solid #000;
-  border-width: 1px 0;
-  background: #666;
+.uk-heading {
+    font-famiy: 'Lato';
+}
+
+.uk-text-dark {
+    color: #4d4d4d;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lato' !important;
+    font-weight: 900 !important;
 }
