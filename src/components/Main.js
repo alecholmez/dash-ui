@@ -44,7 +44,7 @@ class AppComponent extends React.Component {
 
   componentWillMount() {
     console.log('Establishing connection to GoDash...');
-    this.manageWS('ws://localhost:8080/dash');
+    this.manageWS(`ws://decipher-dash.herokuapp.com/dash`);
   }
 
   render() {
