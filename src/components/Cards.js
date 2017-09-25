@@ -14,7 +14,6 @@ class Cards extends React.Component {
   }
 
   componentDidUpdate() {
-    console.log("Component updated");
     this.formatDates(this.props.builds);
   }
 
@@ -44,7 +43,7 @@ class Cards extends React.Component {
     return (
       <div className="uk-container uk-container-expand uk-margin-top uk-margin-bottom">
         <h1 className="uk-heading-divider uk-text-center">Decipher's CI/CD Builds</h1>
-        <div className="uk-child-width-1-5 uk-flex-center uk-grid-match" data-uk-grid>
+        <div className="uk-child-width-1-5@xl uk-child-width-1-4@l uk-child-width-1-3@m uk-child-width-1-2@s uk-flex-center uk-grid-match" data-uk-grid>
           {this.props.builds.map((build, i) => (
             <div key={i}>
               <div className={'uk-tile uk-tile-' + build.build_info.status + ' uk-padding-remove uk-animation-scale-up'}>
