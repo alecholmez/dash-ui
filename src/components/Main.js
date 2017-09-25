@@ -14,6 +14,29 @@ class AppComponent extends React.Component {
     };
   }
 
+  formatDates(builds) {
+    // format dates when they're received
+    var options = {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    };
+
+    builds.map((build) => {
+      if (build.build_info.stop_time == '') {
+        build.build_info.stop_time = 'Pending'
+      } else {
+        build.build_info.stop_time = new Date(build.build_info.stop_time).toLocaleDateString('en-US', options);
+      }
+
+      build.build_info.start_time = new Date(build.build_info.start_time).toLocaleDateString('en-US', options);
+    })
+
+    return builds
+  }
+
   manageWS(url) {
     var connection = new WebSocket(url);
 
@@ -22,11 +45,11 @@ class AppComponent extends React.Component {
     };
     connection.onmessage = (e) => {
       var res = JSON.parse(e.data);
+      var builds = this.formatDates(res.builds);
 
-      this.setState({builds: res.builds});
+      this.setState({builds: builds});
       connection.onclose = (e) => {
         console.log('Connection Closed!');
-        this.setState({buffer: null})
         console.log(e.reason);
 
       };
