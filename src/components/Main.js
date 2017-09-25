@@ -21,18 +21,12 @@ class AppComponent extends React.Component {
       console.log('Connection Established');
     };
     connection.onmessage = (e) => {
-      console.log('Message Recieved: ');
       var res = JSON.parse(e.data);
-      console.log(res.builds);
 
-      this.setState({
-        builds: res.builds
-      });
+      this.setState({builds: res.builds});
       connection.onclose = (e) => {
         console.log('Connection Closed!');
-        this.setState({
-          buffer: null
-        })
+        this.setState({buffer: null})
         console.log(e.reason);
 
       };
@@ -44,7 +38,7 @@ class AppComponent extends React.Component {
 
   componentWillMount() {
     console.log('Establishing connection to GoDash...');
-    this.manageWS(`ws://decipher-dash.herokuapp.com/dash`);
+    this.manageWS('ws://decipher-dash.herokuapp.com/dash');
   }
 
   render() {
@@ -57,7 +51,7 @@ class AppComponent extends React.Component {
     } else {
       return (
         <div data-uk-height-viewport>
-          <Loading />
+          <Loading/>
         </div>
       );
     }
